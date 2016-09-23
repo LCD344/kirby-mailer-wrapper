@@ -1,8 +1,8 @@
 # Kirby Mailer Wrapper
 
-![Version](https://img.shields.io/badge/version-0.2.0-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
+![Version](https://img.shields.io/badge/version-0.2.3-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
 
-*Version 0.2.0*
+*Version 0.3.0*
 
 A wrapper around the kirby mailer, with two new email drivers included.
 
@@ -100,12 +100,12 @@ Usage
 	$mailer = new lcd344\Mailer(serviceName,[options]); // the options is an array that depends on the service you use
 	
     $mailer->to('john@doe.com);
-    $mailer->from('jane@doe.com','Jane Doe'); //second variable only used with phpmailer
-    $mailer->replyTo('jane@doe.org');
-    $mailer->cc('jane2@doe.com'); //Only phpmailer, can be called multiple times for multiple cc addresses and/or called with an array
-    $mailer->bcc('jane3@doe.com'); //Only phpmailer, can be called multiple times for multiple bcc addressess and/or called with an array
-    $mailer->attach($page->file('bla.log')->root()); //Only phpmailer and log, can be called multiple times for multiple attachments and/or called with an array
-    $mailer->send("subject","lorem ipsum text");
+            ->from('jane@doe.com','Jane Doe'); //second variable only used with phpmailer 
+            ->replyTo('jane@doe.org');
+            ->cc('jane2@doe.com'); //Only phpmailer, can be called multiple times for multiple cc addresses and/or called with an array
+            ->bcc('jane3@doe.com'); //Only phpmailer, can be called multiple times for multiple bcc addressess and/or called with an array
+            ->attach($page->file('bla.log')->root()); //Only phpmailer and log, can be called multiple times for multiple attachments and/or called with an array
+            ->send("subject","lorem ipsum text");
 ```
 
 ## Options

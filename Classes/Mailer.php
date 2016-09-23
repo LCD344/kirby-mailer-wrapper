@@ -115,7 +115,7 @@
 			$this->mailer->cc = $this->cc;
 			$this->mailer->bcc = $this->bcc;
 			$this->mailer->fromName = $this->fromName;
-			$this->mailer->send([
+			return $this->mailer->send([
 				'to' => $this->to,
 				'replyTo' => $this->replyTo,
 				'from' => $this->from,

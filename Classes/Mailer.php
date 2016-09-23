@@ -75,15 +75,20 @@
 
 		public function to($to) {
 			$this->to = $to;
+
+			return $this;
 		}
 
 		public function from($from,$fromName = '') {
 			$this->from = $from;
 			$this->fromName = $fromName;
+
+			return $this;
 		}
 
 		public function replyTo($replyTo) {
 			$this->replyTo = $replyTo;
+			return $this;
 		}
 
 		public function cc($cc) {
@@ -92,6 +97,8 @@
 			} else {
 				$this->cc[] = $cc;
 			}
+
+			return $this;
 		}
 
 		public function bcc($bcc) {
@@ -100,6 +107,7 @@
 			} else {
 				$this->bcc[] = $bcc;
 			}
+			return $this;
 		}
 
 		public function attach($files) {
@@ -108,6 +116,7 @@
 			} else {
 				$this->attachments[] = $files;
 			}
+			return $this;
 		}
 
 		public function send($subject, $body) {

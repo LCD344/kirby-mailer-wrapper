@@ -1,0 +1,8 @@
+{
+  "name": "mailer",
+  "description": "Kirby mailer wrapper",
+  "author": "Nur Bar <nbfbce@ymail.com>",
+  "license": "MIT",
+  "type": "kirby-plugin",
+  "version": "0.2.0"
+}

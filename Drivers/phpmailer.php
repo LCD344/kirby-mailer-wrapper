@@ -46,7 +46,11 @@
 		}
 
 		foreach ($email->attachments as $attachment){
-			$mail->addAttachment($attachment);
+			if(is_array($attachment)){
+				$mail->addAttachment($attachment[0],$attachment[1]);
+			} else {
+				$mail->addAttachment($attachment);
+			}
 		}
 
 		$mail->Subject = $email->subject;

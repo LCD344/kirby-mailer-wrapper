@@ -93,7 +93,7 @@
 
 		public function cc($cc) {
 			if (is_array($cc)){
-				$this->cc[] = array_merge($this->cc,$cc);
+				$this->cc = array_merge($this->cc,$cc);
 			} else {
 				$this->cc[] = $cc;
 			}
@@ -103,19 +103,15 @@
 
 		public function bcc($bcc) {
 			if (is_array($bcc)){
-				$this->bcc[] = array_merge($this->bcc,$bcc);
+				$this->bcc = array_merge($this->bcc,$bcc);
 			} else {
 				$this->bcc[] = $bcc;
 			}
 			return $this;
 		}
 
-		public function attach($files) {
-			if (is_array($files)){
-				$this->attachments[] = array_merge($this->attachments[],$files);
-			} else {
-				$this->attachments[] = $files;
-			}
+		public function attach($file) {
+			$this->attachments[] = $file;
 			return $this;
 		}
 

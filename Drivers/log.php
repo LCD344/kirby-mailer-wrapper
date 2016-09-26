@@ -4,8 +4,6 @@
 
 		$fileName = kirby::instance()->roots()->site() . DS . "logs" . DS . "mailer" . '.log';
 		$attachments = "";
-		print_r($email->attachments);
-
 		foreach ($email->attachments as $attachment){
 			$attachments .= $attachment . " ";
 		}

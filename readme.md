@@ -1,10 +1,12 @@
 # Kirby Mailer Wrapper
 
-![Version](https://img.shields.io/badge/version-0.2.3-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
+![Version](https://img.shields.io/badge/version-0.3.5-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
 
-*Version 0.3.0*
+*Version 0.3.5*
 
 A wrapper around the kirby mailer, with two new email drivers included.
+
+This is also an extension that works with the [kirby user manager kirby extension](https://github.com/LCD344/Kirby-userManager-panel-extention) 
 
 ## Installation
 
@@ -104,7 +106,7 @@ Usage
             ->replyTo('jane@doe.org');
             ->cc('jane2@doe.com'); //Only phpmailer, can be called multiple times for multiple cc addresses and/or called with an array
             ->bcc('jane3@doe.com'); //Only phpmailer, can be called multiple times for multiple bcc addressess and/or called with an array
-            ->attach($page->file('bla.log')->root()); //Only phpmailer and log, can be called multiple times for multiple attachments and/or called with an array
+            ->attach($page->file('bla.log')->root()); //Only phpmailer and log, can be called multiple times for multiple attachments if you want to pass file and a new file name pass it as an array [$file,#filename]
             ->send("subject","lorem ipsum text");
 ```
 

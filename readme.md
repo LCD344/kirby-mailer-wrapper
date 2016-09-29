@@ -39,9 +39,7 @@ If you know your way around Git, you can download this plugin as a submodule:
 $ git submodule add https://github.com/LCD344/kirby-mailer-wrapper site/plugins/mailer
 ```
 
-## Usage```
-        site/plugins/mailer/
-        ```
+## Usage
 
 First this includes two kirby mail drivers
 
@@ -114,7 +112,8 @@ Usage
 
 ## Options
 
-The following options will be used as defaults in the wrapper class (not in drivers) if you define them in your `/site/config/config.php` file:
+The following options will be used as defaults in the wrapper class (not in drivers) if you define them in your `/site/config/config.php` file, 
+Any parameters given to the wrapper will override those defaults.:
 
 ```php
 c::set('mailer.from', 'john@doe.com'); // default from email
@@ -142,7 +141,6 @@ c::set("mailer.panel",true); // Enable panel side emailing support (disabled by 
 c::set("mailer.panel.drivers",["phpmailer" => "PHP Mailer","log" => "Logger"]); // Select which drivers to suuport with the mailing page in panel.
 ```
 
-Any parameters given to the wrapper will override those defaults.
 
 ## Requirements
 

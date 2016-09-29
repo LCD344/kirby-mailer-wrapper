@@ -1,10 +1,12 @@
 # Kirby Mailer Wrapper
 
-![Version](https://img.shields.io/badge/version-0.3.5-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
+![Version](https://img.shields.io/badge/version-0.9.0-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
 
-*Version 0.3.5*
+*Version 0.9*
 
 A wrapper around the kirby mailer, with two new email drivers included.
+
+There is also an optional mailer page extension included, check options.
 
 This is also an extension that works with the [kirby user manager kirby extension](https://github.com/LCD344/Kirby-userManager-panel-extention) 
 
@@ -135,6 +137,9 @@ c::set('mailer.phpmailer.password', 'password'); default phpmailer password
 c::set('mailer.phpmailer.protocol', 'ssl;); default phpmailer port
 c::set('mailer.phpmailer.port', 465); default phpmailer port
 c::set('mailer.phpmailer.smptoptions', []); default phpmailer smtp options
+
+c::set("mailer.panel",true); // Enable panel side emailing support (disabled by default)
+c::set("mailer.panel.drivers",["phpmailer" => "PHP Mailer","log" => "Logger"]); // Select which drivers to suuport with the mailing page in panel.
 ```
 
 Any parameters given to the wrapper will override those defaults.

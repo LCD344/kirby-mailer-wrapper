@@ -2,7 +2,7 @@
 
 	email::$services['phpmailer'] = function ($email) {
 
-		$mail = new PHPMailer;
+		$mail = new PHPMailer(true);
 
 		$mail->isSMTP();                                      // Set mailer to use SMTP
 		$mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -31,7 +31,6 @@
 				]
 			];
 		}
-
 		$mail->CharSet = 'UTF-8';
 		$mail->IsHTML(true);
 
@@ -55,7 +54,12 @@
 
 		$mail->Subject = $email->subject;
 		$mail->Body    = $email->body;
-		if(!$mail->send()) {
-			throw new Error($mail->ErrorInfo);
-		};
+
+		try {
+			$mail->send();
+		} catch (phpmailerException $e) {
+			throw new Exception($e->getMessage());
+		} catch (Exception $e){
+			throw new Exception($e->getMessage());
+		}
 	};

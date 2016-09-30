@@ -1,8 +1,8 @@
 # Kirby Mailer Wrapper
 
-![Version](https://img.shields.io/badge/version-0.9.0-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
 
-*Version 0.9*
+*Version 1.0*
 
 A wrapper around the kirby mailer, with two new email drivers included.
 
@@ -109,6 +109,19 @@ Usage
             ->attach($page->file('bla.log')->root()); //Only phpmailer and log, can be called multiple times for multiple attachments if you want to pass file and a new file name pass it as an array [$file,#filename]
             ->send("subject","lorem ipsum text");
 ```
+
+The wrapper now also includes a templateing option, you can bind a  data array and then it will look for the keys in mustaches inside your email to change them - for example :
+
+
+```php
+	$mailer = new lcd344\Mailer("log");
+
+	$mailer->to("john@doe.com")
+		->bind(["username" => "john","email" => "john@doe.com"])
+		->send("test", "{{username}} ... {{email}}");
+```
+
+will end up sending an email with "john ... john@doe.com".
 
 ## Options
 

@@ -19,9 +19,11 @@
 		private $attachments;
 		private $cc;
 		private $bcc;
+		private $data;
 
 		public function __construct($service = false, $options = false) {
 
+			$this->data = [];
 			$this->cc = [];
 			$this->bcc = [];
 			$this->to = '';
@@ -115,7 +117,22 @@
 			return $this;
 		}
 
+		public function bind($data){
+			$this->data = $data;
+			return $this;
+		}
+
+
+		private function bindData($text){
+			foreach ($this->data as $key => $value){
+				$text = str_replace("{{{$key}}}",$value,$text);
+			}
+
+			return $text;
+		}
+
 		public function send($subject, $body) {
+			$body = $this->bindData($body);
 			$this->mailer->attachments = $this->attachments;
 			$this->mailer->cc = $this->cc;
 			$this->mailer->bcc = $this->bcc;

@@ -9,6 +9,8 @@
 	namespace lcd344;
 
 
+	use Underscore\Types\Arrays;
+
 	class Mailer {
 
 		private $mailer;
@@ -118,7 +120,7 @@
 		}
 
 		public function bind($data){
-			$this->data = $data;
+			$this->data = Arrays::flatten($data);
 			return $this;
 		}
 

@@ -110,7 +110,7 @@ Usage
             ->send("subject","lorem ipsum text");
 ```
 
-The wrapper now also includes a templateing option, you can bind a  data array and then it will look for the keys in mustaches inside your email to change them - for example :
+The wrapper now also includes a templateing option, you can bind a data array and then it will look for the keys in mustaches inside your email to change them - for example :
 
 
 ```php
@@ -122,6 +122,7 @@ The wrapper now also includes a templateing option, you can bind a  data array a
 ```
 
 will end up sending an email with "john ... john@doe.com".
+Note: this also supports nested arrays using . notation ('user.name' or 'user.email')
 
 ## Options
 

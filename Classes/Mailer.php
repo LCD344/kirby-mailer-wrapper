@@ -136,8 +136,10 @@
 		public function send($subject, $body) {
 			$body = $this->bindData($body);
 			$this->mailer->attachments = $this->attachments;
-			$this->mailer->cc = $this->cc;
-			$this->mailer->bcc = $this->bcc;
+			$this->mailer->arrayCC = $this->cc;
+			$this->mailer->cc = isset($this->cc[0]) ? $this->cc[0] : null;
+			$this->mailer->arrayBCC = $this->bcc;
+			$this->mailer->bcc = isset($this->bcc[0]) ? $this->bcc[0] : null;
 			$this->mailer->fromName = $this->fromName;
 			return $this->mailer->send([
 				'to' => $this->to,

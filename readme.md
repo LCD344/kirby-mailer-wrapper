@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
 
-*Version 1.0*
+*Version 1.05*
 
 A wrapper around the kirby mailer, with two new email drivers included.
 
@@ -144,12 +144,12 @@ c::set('mailer.postmark.key', 'key'); // default postmark key
 c::set('mailer.mailgun.key', 'key'); // default mailgun key
 c::set('mailer.mailgun.domain', 'domain'); // default mailgun domain
 
-c::set('mailer.phpmailer.host', 'host'); default phpmailer host
-c::set('mailer.phpmailer.username', 'username'); default phpmailer username
-c::set('mailer.phpmailer.password', 'password'); default phpmailer password
-c::set('mailer.phpmailer.protocol', 'ssl;); default phpmailer port
-c::set('mailer.phpmailer.port', 465); default phpmailer port
-c::set('mailer.phpmailer.smptoptions', []); default phpmailer smtp options
+c::set('mailer.phpmailer.host', 'host'); // default phpmailer host
+c::set('mailer.phpmailer.username', 'username'); // default phpmailer username
+c::set('mailer.phpmailer.password', 'password'); // default phpmailer password
+c::set('mailer.phpmailer.protocol', 'ssl;); // default phpmailer port
+c::set('mailer.phpmailer.port', 465); // default phpmailer port
+c::set('mailer.phpmailer.smptoptions', []); // default phpmailer smtp options
 
 c::set("mailer.panel",true); // Enable panel side emailing support (disabled by default)
 c::set("mailer.panel.drivers",["phpmailer" => "PHP Mailer","log" => "Logger"]); // Select which drivers to suuport with the mailing page in panel.

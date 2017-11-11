@@ -34,21 +34,32 @@
 		$mail->CharSet = 'UTF-8';
 		$mail->IsHTML(true);
 
-		$mail->setFrom($email->from, $email->fromName);
+		$mail->setFrom($email->from, isset($email->fromName) ? $email->fromName : null);
 		$mail->addReplyTo($email->replyTo);
 		$mail->addAddress($email->to);
-		foreach($email->cc as $recipient){
-			$mail->addCC($recipient);
-		}
-		foreach($email->bcc as $recipient){
-			$mail->addBCC($recipient);
+		if(isset($email->arrayCC)){
+			foreach($email->arrayCC as $recipient){
+				$mail->addCC($recipient);
+			}
+		} else if($email->cc){
+			$mail->addCC($email->cc);
 		}
 
-		foreach ($email->attachments as $attachment){
-			if(is_array($attachment)){
-				$mail->addAttachment($attachment[0],$attachment[1]);
-			} else {
-				$mail->addAttachment($attachment);
+		if(isset($email->arrayBCC)){
+			foreach($email->arrayBCC as $recipient){
+				$mail->addBCC($recipient);
+			}
+		} else if($email->bcc){
+			$mail->addBCC($email->bcc);
+		}
+
+		if(isset($email->attachments)){
+			foreach ($email->attachments as $attachment){
+				if(is_array($attachment)){
+					$mail->addAttachment($attachment[0],$attachment[1]);
+				} else {
+					$mail->addAttachment($attachment);
+				}
 			}
 		}
 

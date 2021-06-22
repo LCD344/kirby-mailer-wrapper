@@ -1,6 +1,6 @@
 {
     "require": {
         "anahkiasen/underscore-php": "^2.0",
-        "phpmailer/phpmailer": "^5.2"
+        "phpmailer/phpmailer": "^6.5"
     }
 }
